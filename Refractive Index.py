@@ -10,6 +10,7 @@ def getAngle():
     else:
         try:
             angleInput = float(input("What is the angle? "))
+            print("")
             if angleInput < 0 or angleInput > 90:
                 print("The angle can't be less than 0 or greater than 90.\n")
                 getAngle()
@@ -28,6 +29,7 @@ def refractiveIndex():
     else:
         try:
             rIndex = float(input("What is the refractive index? "))
+            print("")
             if rIndex < 1:
                 refractiveIndex()
             else:
@@ -48,11 +50,11 @@ def findUnknown(a1,r1,a2,r2):
 def findMissingAngle(a1,r1,a2,r2):
     sineAngle = (math.sin(math.radians(a2)) * r2) / r1
     missingAngle = math.degrees(math.asin(sineAngle))
-    print(missingAngle)
+    print("The unkown angle is",missingAngle)
 
 def findMissingRIndex(a1,r1,a2,r2):
     missingRIndex = (math.sin(math.radians(a2)) * r2) / math.sin(math.radians(a1))
-    print(missingRIndex)
+    print("The unknown Refractive Index is",missingRIndex)
 
 angleIncidence = getAngle()
 rIndexIncidence = refractiveIndex()
